@@ -1,0 +1,27 @@
+@model IEnumerable<About>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NO</th>
+        <th scope="col">Açıklama</th>
+        <th scope="col">Açıklama</th>
+        <th scope="col">İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach(var i in Model)
+    {
+        <tr>
+            <th scope="row">@i.AboutId</th>
+            <td>@i.Description1</td>
+            <td>@i.Description2</td>
+            <td><a asp-controller="About" asp-action="Update" asp-route-id="@i.AboutId" class="btn btn-outline-secondary" >Güncelle</a></td>
+        </tr>
+
+    }     
+    </tbody>
+  </table>

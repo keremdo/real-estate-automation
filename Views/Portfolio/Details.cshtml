@@ -1,0 +1,32 @@
+@model Portfolio
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 mt-4">
+        <div class="card border">
+            <div class="card-body">
+                <main class="text-center">
+                    <h1 class="h4">İlan Detayı</h1>
+                    <p>İsim : @Model.Title</p>
+                    <p>
+                        @if(Model.SaleStatus == true){
+                            <span class="badge text-bg-primary">Satılık</span>
+                        }else{
+                            <span class="badge text-bg-primary">Kiralık</span>
+                        }
+                        
+                    </p>
+                    <p>Telefon : @Model.Description</p>
+                    <a class="btn btn-outline-secondary" asp-route-id="@Model.PortfolioId" asp-controller="Portfolio" asp-action="Update">Güncelle</a>
+                    <a class="btn btn-outline-danger" asp-controller="Portfolio" asp-action="Delete" asp-route-id="@Model.PortfolioId" >İlandan Kaldır</a>
+                    <a class="btn btn-outline-secondary" asp-controller="Portfolio" asp-action="Index">Geri Dön</a>
+                </main>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+

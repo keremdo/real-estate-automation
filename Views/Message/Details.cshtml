@@ -1,0 +1,24 @@
+@model Message
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 mt-4">
+        <div class="card border">
+            <div class="card-body">
+                <main class="text-center">
+                    <h1 class="h4">İlan Detayı</h1>
+                    <p>İsim : @Model.FullName</p>
+                    <p>Telefon : @Model.Phone</p>
+                    <p>Telefon : @Model.Email</p>
+                    <p>Telefon : @Model.MessageText</p>
+                    <a class="btn btn-outline-secondary" asp-controller="Message" asp-action="Index">Geri Dön</a>
+                </main>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+

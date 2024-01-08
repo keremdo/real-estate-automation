@@ -1,0 +1,19 @@
+@model IEnumerable<AppRole>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table talbe-sm talbe-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Rol Adı</th>
+        <th>Kullanıcılar</th>
+    </tr>
+
+    @foreach(var role in Model){
+        <tr>
+            <td>@role.Id</td>
+            <td>@role.Name</td>
+            <td>Kullanıcı Listesi</td>
+        </tr>
+    }
+</table>

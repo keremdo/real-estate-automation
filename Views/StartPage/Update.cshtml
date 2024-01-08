@@ -1,0 +1,17 @@
+@model StartPage
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form asp-controller="StartPage" asp-action="Update" method="post">
+    <input type="hidden" asp-for="StarPageId">
+    <div class="form-group">
+        <label asp-for="Title" class="mt-3">Başlık</label>
+        <textarea asp-for="Title" class="form-control"  rows="1"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Subtitle">Ünvanlar</label>
+        <textarea asp-for="Subtitle" class="form-control"  rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-secondary">Güncelle</button>
+</form>
